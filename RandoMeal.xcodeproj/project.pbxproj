@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5027F6F28B4C8DF001CD702 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F6E28B4C8DF001CD702 /* Meals.swift */; };
+		F5027F7128B4CA28001CD702 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F7028B4CA28001CD702 /* K.swift */; };
 		F5380B9028B37E2400BC59D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380B8F28B37E2400BC59D3 /* AppDelegate.swift */; };
 		F5380B9228B37E2400BC59D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380B9128B37E2400BC59D3 /* SceneDelegate.swift */; };
 		F5380B9428B37E2400BC59D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380B9328B37E2400BC59D3 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5027F6E28B4C8DF001CD702 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
+		F5027F7028B4CA28001CD702 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F5380B8C28B37E2400BC59D3 /* RandoMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandoMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5380B8F28B37E2400BC59D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5380B9128B37E2400BC59D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		F5380B8E28B37E2400BC59D3 /* RandoMeal */ = {
 			isa = PBXGroup;
 			children = (
+				F5380B9D28B37E2600BC59D3 /* Info.plist */,
 				F5380BC228B3B1FD00BC59D3 /* Model */,
 				F5380BBF28B3B1C600BC59D3 /* View */,
 				F5380BC328B3B20600BC59D3 /* ViewModel */,
@@ -142,7 +147,7 @@
 				F5380B8F28B37E2400BC59D3 /* AppDelegate.swift */,
 				F5380B9128B37E2400BC59D3 /* SceneDelegate.swift */,
 				F5380B9828B37E2600BC59D3 /* Assets.xcassets */,
-				F5380B9D28B37E2600BC59D3 /* Info.plist */,
+				F5027F7028B4CA28001CD702 /* K.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		F5380BC228B3B1FD00BC59D3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F5027F6E28B4C8DF001CD702 /* Meals.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,8 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5027F6F28B4C8DF001CD702 /* Meals.swift in Sources */,
 				F5380B9428B37E2400BC59D3 /* ViewController.swift in Sources */,
 				F5380B9028B37E2400BC59D3 /* AppDelegate.swift in Sources */,
+				F5027F7128B4CA28001CD702 /* K.swift in Sources */,
 				F5380B9228B37E2400BC59D3 /* SceneDelegate.swift in Sources */,
 				F5380BC728B3B26700BC59D3 /* DetailViewController.swift in Sources */,
 			);

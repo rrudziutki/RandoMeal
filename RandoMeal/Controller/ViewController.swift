@@ -11,8 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet var drawButton: UIButton!
     @IBOutlet var detailsButton: UIButton!
-    @IBOutlet var dishLabel: UILabel!
-    @IBOutlet var dishImage: UIImageView!
+    @IBOutlet var mealLabel: UILabel!
+    @IBOutlet var mealImage: UIImageView!
     
     
     override func viewDidLoad() {

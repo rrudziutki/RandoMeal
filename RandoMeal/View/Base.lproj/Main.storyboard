@@ -84,9 +84,9 @@
                     <navigationItem key="navigationItem" id="gVp-sL-lWN"/>
                     <connections>
                         <outlet property="detailsButton" destination="RUb-1x-4Po" id="281-oQ-sfO"/>
-                        <outlet property="dishImage" destination="wLD-5q-clg" id="nX3-AW-ooC"/>
-                        <outlet property="dishLabel" destination="Sf9-KO-oZr" id="u77-7Q-lXV"/>
                         <outlet property="drawButton" destination="Fhi-R5-VWa" id="v8Z-U8-HcH"/>
+                        <outlet property="mealImage" destination="wLD-5q-clg" id="nX3-AW-ooC"/>
+                        <outlet property="mealLabel" destination="Sf9-KO-oZr" id="u77-7Q-lXV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,7 +126,7 @@
                                 <rect key="frame" x="174" y="828" width="80" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0fG-Hh-ipK"/>
-                                    <constraint firstAttribute="width" constant="80" id="Uws-mp-rtv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Uws-mp-rtv"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
@@ -158,8 +158,8 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="YuE-QO-bME" id="iHn-ya-ZXJ"/>
-                        <outlet property="dishImage" destination="Qhg-c2-hMa" id="HN4-ki-bk4"/>
-                        <outlet property="dishLabel" destination="6cM-9T-dpg" id="S8R-B2-H6q"/>
+                        <outlet property="mealImage" destination="Qhg-c2-hMa" id="HN4-ki-bk4"/>
+                        <outlet property="mealLabel" destination="6cM-9T-dpg" id="S8R-B2-H6q"/>
                         <outlet property="saveButton" destination="C32-r7-JRR" id="2tE-xB-N7s"/>
                     </connections>
                 </viewController>

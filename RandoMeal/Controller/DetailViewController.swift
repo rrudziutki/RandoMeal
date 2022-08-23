@@ -9,8 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet var dishImage: UIImageView!
-    @IBOutlet var dishLabel: UILabel!
+    @IBOutlet var mealImage: UIImageView!
+    @IBOutlet var mealLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var saveButton: UIButton!
     
