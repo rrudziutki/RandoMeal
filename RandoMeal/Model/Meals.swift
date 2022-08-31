@@ -5,12 +5,14 @@
 //  Created by Remigiusz Makuchowski on 23/08/2022.
 //
 
-import Foundation
 import CoreText
 
-
 struct Meals: Codable {
-    var meals: [Meal]
+    var all: [Meal]
+    
+    enum CodingKeys: String, CodingKey {
+        case all = "meals"
+    }
 }
 
 struct Meal: Codable {
@@ -19,7 +21,7 @@ struct Meal: Codable {
     var category: String
     var area: String
     var instructions: String
-    var image: String
+    var imageURL: String
     
     
     enum CodingKeys: String, CodingKey {
@@ -28,6 +30,6 @@ struct Meal: Codable {
         case category = "strCategory"
         case area = "strArea"
         case instructions = "strInstructions"
-        case image = "strMealThumb"
+        case imageURL = "strMealThumb"
     }
 }
