@@ -9,12 +9,12 @@ In the future there will added be Realm database.
 Its downloads information from API about random meals from around the world and displays it.
 The user can see beautiful images and detailed descriptions about their drawn dish.
 
-*On the first screen are name, image of the current dish and two buttons - one for meal change and second for details about current meal.*
+### On the first screen are name, image of the current dish and two buttons - one for meal change and second for details about current meal.
 
 
 <img src="https://user-images.githubusercontent.com/76843934/187752484-28ae1ac3-8b85-463a-b92a-d6229f3d654c.png" width="640">
 
-**In the second screen user can see full description of the meal and they will be able to save them in the Realm database.**
+### In the second screen user can see full description of the meal and they will be able to save them in the Realm database.
 
 
 <img src="https://user-images.githubusercontent.com/76843934/187753148-5061b1af-500a-4b0d-b38c-8171d0f7de68.png" width="640">
