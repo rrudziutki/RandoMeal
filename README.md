@@ -1,25 +1,25 @@
 
 # RandoMeal
 
-RandoMeal is an app that helps you choose the perfect meal when you can't make up your mind.
-It was build with use https://www.themealdb.com API, UIKit and Storyboard with Autolayout and MVVM architectural pattern.
-In the future there will added be Realm database.
+RandoMeal is an app that helps you choose the perfect meal, in moments when you can't make up your mind.
+It was build with use of https://www.themealdb.com API, UIKit and Storyboard with Autolayout and MVVM architectural pattern.
+In the future there will be Realm database added to the project.
 
 ## Description
-Its downloads information from API about random meals from around the world and displays it.
-The user can see beautiful images and detailed descriptions about their drawn dish.
+It fetches information from API, regarding random meals from around the world and displays it.
+The user can see images and detailed descriptions of their drawn dish.
 
-### On the first screen are name, image of the current dish and two buttons - one for meal change and second for details about current meal.
+On the first screen there are displayed: name, image of the current dish and two buttons - one enabling change of a meal and second used for showing details about current meal.
 
 
 <img src="https://user-images.githubusercontent.com/76843934/187752484-28ae1ac3-8b85-463a-b92a-d6229f3d654c.png" width="640">
 
-### In the second screen user can see full description of the meal and they will be able to save them in the Realm database.
+In the second screen user can see full description of the meal and in the near future, they will be able to save them in the Realm database.
 
 
 <img src="https://user-images.githubusercontent.com/76843934/187753148-5061b1af-500a-4b0d-b38c-8171d0f7de68.png" width="640">
 
-### By using autoulayout I achieved responsive and scalable UI on every type of the device:
+By using autolayout I achieved responsive and scalable UI on every type of the device:
 
 
 <img src="https://user-images.githubusercontent.com/76843934/187753353-239b7799-fec7-4c65-a263-289900f47476.png" width="640">
