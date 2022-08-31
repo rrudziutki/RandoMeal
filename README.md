@@ -2,7 +2,7 @@
 # RandoMeal
 
 RandoMeal is an app that helps you choose the perfect meal when you can't make up your mind.
-It was build with use https://www.themealdb.com API, UIKit and Storyboard with Autolayout.
+It was build with use https://www.themealdb.com API, UIKit and Storyboard with Autolayout and MVVM architectural pattern.
 In the future there will added be Realm database.
 
 ## Description
