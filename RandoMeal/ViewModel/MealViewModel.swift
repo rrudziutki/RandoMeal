@@ -9,6 +9,7 @@ import Foundation
 
 protocol MealDelegate: AnyObject {
     func showMealInfo(_ meal: Meal)
+    func activateDetailButton()
 }
 
 class MealViewModel {
@@ -28,6 +29,7 @@ class MealViewModel {
                 return // TODO ERROR HANDLING
             }
             self.meal = mealData.all[0]
+            self.delegate?.activateDetailButton()
             self.delegate?.showMealInfo(mealData.all[0])
         }
     }

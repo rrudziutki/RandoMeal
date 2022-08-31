@@ -23,9 +23,6 @@ class ViewController: UIViewController {
     
     @IBAction func drawButtonPressed(_ sender: UIButton) {
         vm.getMeal()
-        if vm.meal != nil {
-            detailsButton.isEnabled = true
-        }
     }
     
     @IBAction func detailButtonPressed(_ sender: Any) {
@@ -56,5 +53,9 @@ extension ViewController: MealDelegate {
     func showMealInfo(_ meal: Meal) {
         mealLabel.text = meal.name
         configureImage()
+    }
+    
+    func activateDetailButton() {
+        self.detailsButton.isEnabled = true
     }
 }
