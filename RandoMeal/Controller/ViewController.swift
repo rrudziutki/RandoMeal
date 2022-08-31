@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        vm.delegate = self
+        confgiureVC()
     }
     
     @IBAction func drawButtonPressed(_ sender: UIButton) {
@@ -31,11 +31,23 @@ class ViewController: UIViewController {
     }
 }
 
+private extension ViewController {
+    func confgiureVC() {
+        vm.delegate = self
+    }
+    
+    func configureImage() {
+        mealImage.loadFrom(from: meal.imageURL)
+        mealImage.layer.borderWidth = 2
+        mealImage.layer.cornerRadius = 5
+    }
+}
+
 extension ViewController: MealDelegate {
     func showMealInfo(_ meal: Meal) {
         self.meal = meal
         mealLabel.text = meal.name
-        mealImage.loadFrom(from: meal.imageURL)
+        configureImage()
     }
     
     
