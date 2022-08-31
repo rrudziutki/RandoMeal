@@ -8,17 +8,32 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
     @IBOutlet var mealImage: UIImageView!
     @IBOutlet var mealLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var saveButton: UIButton!
+    var meal: Meal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        //TODO save to realm
+    }
+}
+
+private extension DetailViewController {
+    func configure() {
+        configureImage()
+        mealLabel.text = meal.name
+        descriptionTextView.text = meal.instructions
     }
     
+    func configureImage() {
+        mealImage.loadFrom(from: meal.imageURL)
+        mealImage.layer.borderWidth = 2
+        mealImage.layer.cornerRadius = 5
+    }
 }

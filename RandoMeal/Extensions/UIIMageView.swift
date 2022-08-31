@@ -11,10 +11,10 @@ import Alamofire
 extension UIImageView {
     
     func loadFrom(from url: String) {
-        self.image = nil
         guard let url = URL(string: url) else {
             return
         }
+        self.image = nil
         DispatchQueue.main.async { [weak self] in
             AF.request(url)
                 .validate()

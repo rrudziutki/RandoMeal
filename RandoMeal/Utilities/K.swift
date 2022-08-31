@@ -8,7 +8,7 @@
 import Foundation
 
 struct K {
-    static let apiKey = 1
     static let apiRandomURL = "https://www.themealdb.com/api/json/v1/1/random.php"
     static let apiMealSearch = "https://www.themealdb.com/"
+    static let sequeIdentifier = "detail"
 }

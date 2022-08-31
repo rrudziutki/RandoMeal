@@ -34,36 +34,39 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="b7g-2z-dTr">
-                                <rect key="frame" x="20" y="844" width="388" height="28"/>
+                                <rect key="frame" x="20" y="828" width="388" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhi-R5-VWa" userLabel="Draw">
-                                        <rect key="frame" x="0.0" y="0.0" width="174" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="44"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Refresh">
                                             <backgroundConfiguration key="background" cornerRadius="20">
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="drawButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ebZ-A6-dFJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUb-1x-4Po" userLabel="Details">
-                                        <rect key="frame" x="214" y="0.0" width="174" height="28"/>
+                                        <rect key="frame" x="214" y="0.0" width="174" height="44"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Details">
                                             <backgroundConfiguration key="background" cornerRadius="20">
                                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                             </backgroundConfiguration>
                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="detailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SOn-qL-DTt"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dfR-d5-ry8"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,6 +92,7 @@
                         <outlet property="drawButton" destination="Fhi-R5-VWa" id="v8Z-U8-HcH"/>
                         <outlet property="mealImage" destination="wLD-5q-clg" id="nX3-AW-ooC"/>
                         <outlet property="mealLabel" destination="Sf9-KO-oZr" id="u77-7Q-lXV"/>
+                        <segue destination="lyy-7W-lts" kind="show" identifier="detail" id="jeb-qw-Qu9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -104,23 +108,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qhg-c2-hMa">
-                                <rect key="frame" x="64.333333333333343" y="64" width="299.33333333333326" height="299.66666666666669"/>
+                                <rect key="frame" x="64.333333333333343" y="108.00000000000003" width="299.33333333333326" height="299.66666666666674"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Qhg-c2-hMa" secondAttribute="height" multiplier="1:1" id="HKK-bU-M0E"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the dish" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cM-9T-dpg">
-                                <rect key="frame" x="21.333333333333343" y="373.66666666666669" width="385.33333333333326" height="28"/>
+                                <rect key="frame" x="21.333333333333343" y="417.66666666666669" width="385.33333333333326" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="qrL-k4-yQd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuE-QO-bME">
-                                <rect key="frame" x="20" y="421.66666666666674" width="388" height="386.33333333333326"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -135,31 +133,52 @@
                                     <backgroundConfiguration key="background" cornerRadius="20">
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                     </backgroundConfiguration>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveButtonPressed:" destination="lyy-7W-lts" eventType="touchUpInside" id="2e8-vp-3f7"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZC-xO-TEg" userLabel="Label View">
+                                <rect key="frame" x="10" y="455.66666666666674" width="408" height="362.33333333333326"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwn-BF-2k8">
+                                        <rect key="frame" x="10" y="0.0" width="388" height="352.33333333333331"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.     Crust: make a dough from 250g flour (I like mixing different flours like plain and wholegrain spelt flour), 125g butter, 1 egg and a pinch of salt, press it into a tart form and place it in the fridge. Filling: stir 300g cream cheese and 100ml milk until smooth, add in 3 eggs, 100g grated parmesan cheese and season with salt, pepper and nutmeg. Take the crust out of the fridge and prick the bottom with a fork. Pour in the filling and bake at 175 degrees C for about 25 minutes. Cover the tart with some aluminium foil after half the time. In the mean time, slice about 350g mini tomatoes. In a small pan heat 3tbsp olive oil, 3tbsp white vinegar, 1 tbsp honey, salt and pepper and combine well. Pour over the tomato slices and mix well. With a spoon, place the tomato slices on the tart, avoiding too much liquid on it. Decorate with basil leaves and enjoy
+</mutableString>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Rwn-BF-2k8" firstAttribute="leading" secondItem="iZC-xO-TEg" secondAttribute="leading" constant="10" id="0TI-t7-flb"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rwn-BF-2k8" secondAttribute="trailing" constant="10" id="RmF-uN-sdT"/>
+                                    <constraint firstItem="Rwn-BF-2k8" firstAttribute="top" secondItem="iZC-xO-TEg" secondAttribute="top" id="uNK-JC-o2M"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rwn-BF-2k8" secondAttribute="bottom" constant="10" id="wYL-84-qh2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xUt-Ba-Ghn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.91078044459999996" green="0.89671662679999997" blue="0.75066552460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Qhg-c2-hMa" firstAttribute="centerX" secondItem="V0w-hQ-g8x" secondAttribute="centerX" id="9GH-eq-CuM"/>
                             <constraint firstItem="6cM-9T-dpg" firstAttribute="top" secondItem="Qhg-c2-hMa" secondAttribute="bottom" constant="10" id="GSh-di-OTt"/>
+                            <constraint firstItem="xUt-Ba-Ghn" firstAttribute="trailing" secondItem="iZC-xO-TEg" secondAttribute="trailing" constant="10" id="JE8-mj-v83"/>
                             <constraint firstItem="xUt-Ba-Ghn" firstAttribute="bottom" secondItem="C32-r7-JRR" secondAttribute="bottom" constant="20" id="Lbk-Zo-jOy"/>
                             <constraint firstItem="Qhg-c2-hMa" firstAttribute="width" secondItem="V0w-hQ-g8x" secondAttribute="width" multiplier="0.7" id="Rzc-hS-t06"/>
-                            <constraint firstItem="xUt-Ba-Ghn" firstAttribute="trailing" secondItem="YuE-QO-bME" secondAttribute="trailing" constant="20" id="UTL-BJ-jse"/>
-                            <constraint firstItem="YuE-QO-bME" firstAttribute="top" secondItem="6cM-9T-dpg" secondAttribute="bottom" constant="20" id="WKO-qX-CYv"/>
                             <constraint firstItem="C32-r7-JRR" firstAttribute="centerX" secondItem="V0w-hQ-g8x" secondAttribute="centerX" id="bFH-lx-xPf"/>
+                            <constraint firstItem="iZC-xO-TEg" firstAttribute="top" secondItem="6cM-9T-dpg" secondAttribute="bottom" constant="10" id="gcY-Y2-XWZ"/>
+                            <constraint firstItem="C32-r7-JRR" firstAttribute="top" secondItem="iZC-xO-TEg" secondAttribute="bottom" constant="10" id="mSJ-n3-SmO"/>
                             <constraint firstItem="Qhg-c2-hMa" firstAttribute="top" secondItem="xUt-Ba-Ghn" secondAttribute="top" constant="20" id="plU-GA-AgB"/>
                             <constraint firstItem="6cM-9T-dpg" firstAttribute="centerX" secondItem="V0w-hQ-g8x" secondAttribute="centerX" id="qN5-oj-buU"/>
-                            <constraint firstItem="YuE-QO-bME" firstAttribute="leading" secondItem="xUt-Ba-Ghn" secondAttribute="leading" constant="20" id="s1s-LH-Xuh"/>
-                            <constraint firstItem="C32-r7-JRR" firstAttribute="top" secondItem="YuE-QO-bME" secondAttribute="bottom" constant="20" id="tut-9E-gCj"/>
                             <constraint firstItem="6cM-9T-dpg" firstAttribute="width" secondItem="xUt-Ba-Ghn" secondAttribute="width" multiplier="0.9" id="u27-uh-cgP"/>
+                            <constraint firstItem="iZC-xO-TEg" firstAttribute="leading" secondItem="xUt-Ba-Ghn" secondAttribute="leading" constant="10" id="zcX-80-xbZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="e1w-7Y-BQb"/>
                     <connections>
-                        <outlet property="descriptionLabel" destination="YuE-QO-bME" id="iHn-ya-ZXJ"/>
+                        <outlet property="descriptionTextView" destination="Rwn-BF-2k8" id="4cT-OA-aA7"/>
                         <outlet property="mealImage" destination="Qhg-c2-hMa" id="HN4-ki-bk4"/>
                         <outlet property="mealLabel" destination="6cM-9T-dpg" id="S8R-B2-H6q"/>
                         <outlet property="saveButton" destination="C32-r7-JRR" id="2tE-xB-N7s"/>
@@ -189,8 +208,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

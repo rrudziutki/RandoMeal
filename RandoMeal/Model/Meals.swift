@@ -23,7 +23,6 @@ struct Meal: Codable {
     var instructions: String
     var imageURL: String
     
-    
     enum CodingKeys: String, CodingKey {
         case id = "idMeal"
         case name = "strMeal"

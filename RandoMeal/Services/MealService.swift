@@ -9,7 +9,6 @@ import Foundation
 import Alamofire
 
 class MealService {
-    
     func getRandomMeal(callback: @escaping (_ mealData: Meals) -> Void) {
         AF.request(K.apiRandomURL)
             .validate()
@@ -17,6 +16,6 @@ class MealService {
                 if let data = response.value {
                     callback(data)
                 }
-            } 
+            }
     }
 }
