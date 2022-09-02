@@ -50,6 +50,14 @@ private extension ViewController {
 
 //MARK: - Meal Delegate
 extension ViewController: MealDelegate {
+    func presentErrorAlert(message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "An Error Occurred", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+        }
+    }
+    
     func showMealInfo(_ meal: Meal) {
         mealLabel.text = meal.name
         configureImage()

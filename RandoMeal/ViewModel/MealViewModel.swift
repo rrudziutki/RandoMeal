@@ -9,6 +9,7 @@ import Foundation
 
 protocol MealDelegate: AnyObject {
     func showMealInfo(_ meal: Meal)
+    func presentErrorAlert(message: String)
     func activateDetailButton()
 }
 
@@ -23,14 +24,17 @@ class MealViewModel {
     }
     
     func getMeal() {
-        mealService.getRandomMeal { [unowned self] mealData in
-            guard !mealData.all.isEmpty else {
-                print("Brak danych")
-                return // TODO ERROR HANDLING
+        mealService.getRandomMeal { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let meals):
+                self.meal = meals.all[0]
+                self.mealImageData = self.mealService.loadImage(from: self.meal!.imageURL)
+                self.delegate?.activateDetailButton()
+                self.delegate?.showMealInfo(self.meal!)
+            case .failure(let error):
+                self.delegate?.presentErrorAlert(message: error.localizedDescription)
             }
-            self.meal = mealData.all[0]
-            self.delegate?.activateDetailButton()
-            self.delegate?.showMealInfo(mealData.all[0])
         }
     }
 }
