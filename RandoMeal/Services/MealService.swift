@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class MealService {
-    func getRandomMeal(callback: @escaping (_ mealData: Result<Meals, AFError>) -> Void) {
+    func getRandomMeal(callback: @escaping (_ mealData: Result<Meals, Error>) -> Void) {
         AF.request(K.apiRandomURL)
             .validate()
             .responseDecodable(of: Meals.self) { response in
@@ -24,9 +24,6 @@ class MealService {
     
     func loadImage(from url: String) -> Data {
         var dataImage = Data()
-        guard let url = URL(string: url) else {
-            return dataImage
-        }
         AF.request(url)
             .validate()
             .response { response in

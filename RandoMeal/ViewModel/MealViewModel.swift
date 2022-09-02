@@ -15,7 +15,7 @@ protocol MealDelegate: AnyObject {
 
 class MealViewModel {
     private let mealService: MealService
-    weak var delegate: MealDelegate?
+    weak var delegate: MealDelegate!
     var meal: Meal?
     var mealImageData: Data?
     
