@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var saveButton: UIButton!
     var meal: Meal!
+    var imageData: Data!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ private extension DetailViewController {
     }
     
     func configureImage() {
-        mealImage.loadFrom(from: meal.imageURL)
+        mealImage.image = UIImage(data: imageData)
         mealImage.layer.borderWidth = 2
         mealImage.layer.cornerRadius = 5
     }

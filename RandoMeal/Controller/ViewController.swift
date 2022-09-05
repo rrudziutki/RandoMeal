@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let vc = segue.destination as? DetailViewController else { return }
         vc.meal = vm.meal
+        vc.imageData = vm.mealImageData
     }
 }
 
@@ -40,16 +41,16 @@ private extension ViewController {
     func confgiureVC() {
         vm.delegate = self
     }
-    
-    func configureImage() {
-        mealImage.loadFrom(from: vm.meal?.imageURL ?? "")
-        mealImage.layer.borderWidth = 2
-        mealImage.layer.cornerRadius = 5
-    }
 }
 
 //MARK: - Meal Delegate
 extension ViewController: MealDelegate {
+    func configureImage(with data: Data) {
+        mealImage.image = UIImage(data: data)
+        mealImage.layer.borderWidth = 2
+        mealImage.layer.cornerRadius = 5
+    }
+    
     func presentErrorAlert(message: String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "An Error Occurred", message: message, preferredStyle: .alert)
@@ -60,7 +61,6 @@ extension ViewController: MealDelegate {
     
     func showMealInfo(_ meal: Meal) {
         mealLabel.text = meal.name
-        configureImage()
     }
     
     func activateDetailButton() {

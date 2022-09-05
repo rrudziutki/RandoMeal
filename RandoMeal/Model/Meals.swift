@@ -15,7 +15,7 @@ struct Meals: Codable {
     }
 }
 
-struct Meal: Codable {
+struct Meal: Codable, Equatable {
     var id: String
     var name: String
     var category: String
