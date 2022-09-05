@@ -10,6 +10,7 @@ import Foundation
 protocol MealDelegate: AnyObject {
     func showMealInfo(_ meal: Meal)
     func presentErrorAlert(message: String)
+    func configureImage(with data: Data)
     func activateDetailButton()
 }
 
@@ -17,7 +18,7 @@ class MealViewModel {
     private let mealService: MealService
     weak var delegate: MealDelegate!
     var meal: Meal?
-    var mealImageData: Data?
+    var mealImageData =  Data()
     
     init(mealService: MealService = MealService()) {
         self.mealService = mealService
@@ -29,9 +30,21 @@ class MealViewModel {
             switch result {
             case .success(let meals):
                 self.meal = meals.all[0]
-                self.mealImageData = self.mealService.loadImage(from: self.meal!.imageURL)
+                self.getMealImageData()
                 self.delegate?.activateDetailButton()
                 self.delegate?.showMealInfo(self.meal!)
+            case .failure(let error):
+                self.delegate?.presentErrorAlert(message: error.localizedDescription)
+            }
+        }
+    }
+    
+    private func getMealImageData() {
+        mealService.loadImage(from: self.meal?.imageURL ?? "") { result in
+            switch result {
+            case .success(let data):
+                self.mealImageData = data
+                self.delegate.configureImage(with: data)
             case .failure(let error):
                 self.delegate?.presentErrorAlert(message: error.localizedDescription)
             }

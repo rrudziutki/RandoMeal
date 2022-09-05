@@ -22,15 +22,16 @@ class MealService {
             }
     }
     
-    func loadImage(from url: String) -> Data {
-        var dataImage = Data()
+    func loadImage(from url: String, callback: @escaping (Result<Data, Error>) -> Void) {
         AF.request(url)
             .validate()
             .response { response in
-                guard let unwrappedData = response.data else { return }
-                dataImage = unwrappedData
+                if let error = response.error {
+                    callback(.failure(error))
+                }
+                if let data = response.data {
+                    callback(.success(data))
+                }
             }
-        return dataImage
     }
 }
-

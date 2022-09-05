@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1966B2CD28C2312900DCFE55 /* MealServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B2CC28C2312900DCFE55 /* MealServiceMock.swift */; };
 		1966B2CF28C2415400DCFE55 /* MealViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */; };
+		19B61CBE28C4AD22007C86B7 /* randomMealImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */; };
 		F5027F6F28B4C8DF001CD702 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F6E28B4C8DF001CD702 /* Meals.swift */; };
 		F5027F7128B4CA28001CD702 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F7028B4CA28001CD702 /* K.swift */; };
 		F5111A5928BE41550037F3AD /* MealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5111A5828BE41550037F3AD /* MealService.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		1966B2CC28C2312900DCFE55 /* MealServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealServiceMock.swift; sourceTree = "<group>"; };
 		1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModelDelegate.swift; sourceTree = "<group>"; };
+		19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = randomMealImage.jpg; path = ../../../Downloads/randomMealImage.jpg; sourceTree = "<group>"; };
 		F5027F6E28B4C8DF001CD702 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		F5027F7028B4CA28001CD702 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F5111A5828BE41550037F3AD /* MealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealService.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		F5380BA528B37E2600BC59D3 /* RandoMealTests */ = {
 			isa = PBXGroup;
 			children = (
+				19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */,
 				F5380BA628B37E2600BC59D3 /* RandoMealTests.swift */,
 				1966B2CC28C2312900DCFE55 /* MealServiceMock.swift */,
 				1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */,
@@ -276,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B61CBE28C4AD22007C86B7 /* randomMealImage.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

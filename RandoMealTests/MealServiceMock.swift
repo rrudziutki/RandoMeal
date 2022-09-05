@@ -18,8 +18,28 @@ class MealServiceMock: MealService {
             callback(.success(Meals(all: [Meal(id: "0", name: "TestName", category: "TestCategory", area: "TestArea", instructions: "TestInstructions", imageURL: "www.imageurl.com")])))
         case .error:
             callback(.failure(MockError.error))
-        case .none:
-            fatalError()
+        case .mealValid_imageError:
+            callback(.success(Meals(all: [Meal(id: "0", name: "TestName", category: "TestCategory", area: "TestArea", instructions: "TestInstructions", imageURL: "www.imageurl.com")])))
+        default:
+            fatalError("Should not be called")
+        }
+    }
+    
+    override func loadImage(from url: String, callback: @escaping (Result<Data, Error>) -> Void) {
+        switch mockType {
+        case .valid:
+            let bundle = Bundle(for: type(of: self))
+            guard let url = bundle.url(forResource: "randomMealImage", withExtension: ".jpg") else {
+                fatalError("No mock image found")
+            }
+            let data = try! Data(contentsOf: url)
+            callback(.success(data))
+        case .error:
+            callback(.failure(MockError.error))
+        case .mealValid_imageError:
+            callback(.failure(MockError.error))
+        default:
+            fatalError("Should not be called")
         }
     }
 }
@@ -31,4 +51,5 @@ enum MockError: Error {
 enum MockType {
     case valid
     case error
+    case mealValid_imageError
 }

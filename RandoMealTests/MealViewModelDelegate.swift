@@ -9,6 +9,7 @@ import Foundation
 @testable import RandoMeal
 
 class MockMealViewModelDelegate: MealDelegate {
+    var isConfigureImageCalled = false
     var isShowMealInfoCalled = false
     var isPresentErrorCalled = false
     var isActivateDetailButtonCalled = false
@@ -25,5 +26,7 @@ class MockMealViewModelDelegate: MealDelegate {
         isActivateDetailButtonCalled = true
     }
     
-    
+    func configureImage(with data: Data) {
+        isConfigureImageCalled = true
+    }
 }
