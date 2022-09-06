@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     @IBOutlet var mealImage: UIImageView!
     @IBOutlet var mealLabel: UILabel!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var saveButton: UIButton!
+    let realm = try! Realm()
+    let mealBuilder = MealBuilder()
     var meal: Meal!
     var imageData: Data!
     
@@ -21,7 +24,19 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        //TODO save to realm
+        let realmmeal = mealBuilder
+            .copyFrom(meal)
+            .setImageData(imageData)
+            .build()
+        // Prepare to handle exceptions.
+        do {
+            // Open a thread-safe transaction.
+            try realm.write {
+                realm.add(realmmeal)
+            }
+        } catch let error as NSError {
+            print("An error occurred while saving to realm: \(error)")
+        }
     }
 }
 
