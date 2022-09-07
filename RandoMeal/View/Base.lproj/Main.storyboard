@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="928.03738317757006" y="83.585313174946009"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Saved Collection View Controller-->
         <scene sceneID="UpW-zy-qzE">
             <objects>
-                <collectionViewController id="9S6-TD-Fmy" sceneMemberID="viewController">
+                <collectionViewController id="9S6-TD-Fmy" customClass="SavedCollectionViewController" customModule="RandoMeal" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nl0-ak-9W4">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,13 +154,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qhg-c2-hMa">
-                                <rect key="frame" x="64.333333333333343" y="108.00000000000003" width="299.33333333333326" height="299.66666666666674"/>
+                                <rect key="frame" x="128.33333333333331" y="108.00000000000001" width="171.33333333333331" height="171.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Qhg-c2-hMa" secondAttribute="height" multiplier="1:1" id="HKK-bU-M0E"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of the dish" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cM-9T-dpg">
-                                <rect key="frame" x="21.333333333333343" y="417.66666666666669" width="385.33333333333326" height="28"/>
+                                <rect key="frame" x="21.333333333333343" y="289.33333333333331" width="385.33333333333326" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="qrL-k4-yQd"/>
                                 </constraints>
@@ -168,28 +168,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C32-r7-JRR">
-                                <rect key="frame" x="164" y="828" width="100" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="0fG-Hh-ipK"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Uws-mp-rtv"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save">
-                                    <backgroundConfiguration key="background" cornerRadius="20">
-                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="saveButtonPressed:" destination="lyy-7W-lts" eventType="touchUpInside" id="2e8-vp-3f7"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZC-xO-TEg" userLabel="Label View">
-                                <rect key="frame" x="10" y="455.66666666666674" width="408" height="362.33333333333326"/>
+                                <rect key="frame" x="10" y="327.33333333333326" width="408" height="490.66666666666674"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwn-BF-2k8">
-                                        <rect key="frame" x="10" y="0.0" width="388" height="352.33333333333331"/>
+                                        <rect key="frame" x="10" y="0.0" width="388" height="480.66666666666669"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.     Crust: make a dough from 250g flour (I like mixing different flours like plain and wholegrain spelt flour), 125g butter, 1 egg and a pinch of salt, press it into a tart form and place it in the fridge. Filling: stir 300g cream cheese and 100ml milk until smooth, add in 3 eggs, 100g grated parmesan cheese and season with salt, pepper and nutmeg. Take the crust out of the fridge and prick the bottom with a fork. Pour in the filling and bake at 175 degrees C for about 25 minutes. Cover the tart with some aluminium foil after half the time. In the mean time, slice about 350g mini tomatoes. In a small pan heat 3tbsp olive oil, 3tbsp white vinegar, 1 tbsp honey, salt and pepper and combine well. Pour over the tomato slices and mix well. With a spoon, place the tomato slices on the tart, avoiding too much liquid on it. Decorate with basil leaves and enjoy
 </string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -204,18 +187,56 @@
                                     <constraint firstAttribute="bottom" secondItem="Rwn-BF-2k8" secondAttribute="bottom" constant="10" id="wYL-84-qh2"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="lvi-EB-Y4Y">
+                                <rect key="frame" x="20" y="828" width="388" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVo-Qz-iWb" userLabel="Draw">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="44"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Save">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="drawButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="El1-FI-6Ws"/>
+                                            <action selector="saveButtonPressed:" destination="lyy-7W-lts" eventType="touchUpInside" id="JSY-Nz-24n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn8-ud-ayQ" userLabel="Details">
+                                        <rect key="frame" x="214" y="0.0" width="174" height="44"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Delete">
+                                            <backgroundConfiguration key="background" cornerRadius="20">
+                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteButtonPressed:" destination="lyy-7W-lts" eventType="touchUpInside" id="2Vk-5P-NuP"/>
+                                            <action selector="detailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xct-X4-vAN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ISh-J3-OMD"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xUt-Ba-Ghn"/>
                         <color key="backgroundColor" red="0.91078044459999996" green="0.89671662679999997" blue="0.75066552460000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="xUt-Ba-Ghn" firstAttribute="bottom" secondItem="lvi-EB-Y4Y" secondAttribute="bottom" constant="20" id="4gh-vf-j2k"/>
                             <constraint firstItem="Qhg-c2-hMa" firstAttribute="centerX" secondItem="V0w-hQ-g8x" secondAttribute="centerX" id="9GH-eq-CuM"/>
+                            <constraint firstItem="lvi-EB-Y4Y" firstAttribute="top" secondItem="iZC-xO-TEg" secondAttribute="bottom" constant="10" id="ABs-Ze-gh3"/>
                             <constraint firstItem="6cM-9T-dpg" firstAttribute="top" secondItem="Qhg-c2-hMa" secondAttribute="bottom" constant="10" id="GSh-di-OTt"/>
                             <constraint firstItem="xUt-Ba-Ghn" firstAttribute="trailing" secondItem="iZC-xO-TEg" secondAttribute="trailing" constant="10" id="JE8-mj-v83"/>
-                            <constraint firstItem="xUt-Ba-Ghn" firstAttribute="bottom" secondItem="C32-r7-JRR" secondAttribute="bottom" constant="20" id="Lbk-Zo-jOy"/>
-                            <constraint firstItem="Qhg-c2-hMa" firstAttribute="width" secondItem="V0w-hQ-g8x" secondAttribute="width" multiplier="0.7" id="Rzc-hS-t06"/>
-                            <constraint firstItem="C32-r7-JRR" firstAttribute="centerX" secondItem="V0w-hQ-g8x" secondAttribute="centerX" id="bFH-lx-xPf"/>
+                            <constraint firstItem="Qhg-c2-hMa" firstAttribute="width" secondItem="V0w-hQ-g8x" secondAttribute="width" multiplier="0.4" id="Rzc-hS-t06"/>
+                            <constraint firstItem="lvi-EB-Y4Y" firstAttribute="leading" secondItem="xUt-Ba-Ghn" secondAttribute="leading" constant="20" id="TVH-z4-lEZ"/>
+                            <constraint firstItem="xUt-Ba-Ghn" firstAttribute="trailing" secondItem="lvi-EB-Y4Y" secondAttribute="trailing" constant="20" id="ZTV-gX-PtV"/>
                             <constraint firstItem="iZC-xO-TEg" firstAttribute="top" secondItem="6cM-9T-dpg" secondAttribute="bottom" constant="10" id="gcY-Y2-XWZ"/>
-                            <constraint firstItem="C32-r7-JRR" firstAttribute="top" secondItem="iZC-xO-TEg" secondAttribute="bottom" constant="10" id="mSJ-n3-SmO"/>
                             <constraint firstItem="Qhg-c2-hMa" firstAttribute="top" secondItem="xUt-Ba-Ghn" secondAttribute="top" constant="20" id="plU-GA-AgB"/>
                             <constraint firstItem="6cM-9T-dpg" firstAttribute="centerX" secondItem="V0w-hQ-g8x" secondAttribute="centerX" id="qN5-oj-buU"/>
                             <constraint firstItem="6cM-9T-dpg" firstAttribute="width" secondItem="xUt-Ba-Ghn" secondAttribute="width" multiplier="0.9" id="u27-uh-cgP"/>
@@ -224,10 +245,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="e1w-7Y-BQb"/>
                     <connections>
+                        <outlet property="deleteButton" destination="Vn8-ud-ayQ" id="scn-tc-8UG"/>
                         <outlet property="descriptionTextView" destination="Rwn-BF-2k8" id="4cT-OA-aA7"/>
                         <outlet property="mealImage" destination="Qhg-c2-hMa" id="HN4-ki-bk4"/>
                         <outlet property="mealLabel" destination="6cM-9T-dpg" id="S8R-B2-H6q"/>
-                        <outlet property="saveButton" destination="C32-r7-JRR" id="2tE-xB-N7s"/>
+                        <outlet property="saveButton" destination="jVo-Qz-iWb" id="hQE-4c-joy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3r-6d-Fqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -267,8 +289,8 @@
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
