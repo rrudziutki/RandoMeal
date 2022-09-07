@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,18 +88,62 @@
                             <constraint firstItem="IRy-Gh-59E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="zqt-4t-m28"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gVp-sL-lWN"/>
+                    <navigationItem key="navigationItem" id="gVp-sL-lWN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="W7Z-s5-b2F">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="barButtonPressed:" destination="BYZ-38-t0r" id="8k6-jg-MHC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="barButton" destination="W7Z-s5-b2F" id="022-Wl-iUh"/>
                         <outlet property="detailsButton" destination="RUb-1x-4Po" id="281-oQ-sfO"/>
                         <outlet property="drawButton" destination="Fhi-R5-VWa" id="v8Z-U8-HcH"/>
                         <outlet property="mealImage" destination="wLD-5q-clg" id="nX3-AW-ooC"/>
                         <outlet property="mealLabel" destination="Sf9-KO-oZr" id="u77-7Q-lXV"/>
                         <segue destination="lyy-7W-lts" kind="show" identifier="detail" id="jeb-qw-Qu9"/>
+                        <segue destination="9S6-TD-Fmy" kind="show" identifier="saved" id="9KI-j1-HBB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.03738317757006" y="83.585313174946009"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="UpW-zy-qzE">
+            <objects>
+                <collectionViewController id="9S6-TD-Fmy" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nl0-ak-9W4">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mi2-OA-WXq">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xAL-mN-wXi">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="W9D-JJ-0Tc">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="9S6-TD-Fmy" id="fI7-PR-sjc"/>
+                            <outlet property="delegate" destination="9S6-TD-Fmy" id="3ck-Vw-ejb"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Bzk-V3-oWj"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eoW-qZ-eDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1730" y="-319"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="el2-0g-3sA">
@@ -124,15 +169,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C32-r7-JRR">
-                                <rect key="frame" x="174" y="828" width="80" height="44"/>
+                                <rect key="frame" x="164" y="828" width="100" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0fG-Hh-ipK"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Uws-mp-rtv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Uws-mp-rtv"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <backgroundConfiguration key="background" cornerRadius="20">
-                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
@@ -187,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3r-6d-Fqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966.8224299065419" y="83.585313174946009"/>
+            <point key="canvasLocation" x="1730" y="379"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BQB-MP-PH4">
@@ -208,18 +253,22 @@
             <point key="canvasLocation" x="28.037383177570092" y="83.585313174946009"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
