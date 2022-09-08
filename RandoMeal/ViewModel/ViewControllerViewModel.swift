@@ -14,11 +14,11 @@ protocol MealDelegate: AnyObject {
     func activateDetailButton()
 }
 
-class MealViewModel {
+class ViewControllerViewModel {
     private let mealService: MealService
     weak var delegate: MealDelegate!
     var meal: Meal?
-    var mealImageData =  Data()
+    var mealImageData = Data()
     
     init(mealService: MealService = MealService()) {
         self.mealService = mealService

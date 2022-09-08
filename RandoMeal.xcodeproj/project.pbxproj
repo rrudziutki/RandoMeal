@@ -10,10 +10,17 @@
 		1966B2CD28C2312900DCFE55 /* MealServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B2CC28C2312900DCFE55 /* MealServiceMock.swift */; };
 		1966B2CF28C2415400DCFE55 /* MealViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */; };
 		19B61CBE28C4AD22007C86B7 /* randomMealImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */; };
+		19C2889828C876A100E49262 /* SavedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889728C876A100E49262 /* SavedCollectionViewController.swift */; };
+		19C2889C28C8C4A000E49262 /* SavedCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */; };
+		19C2889F28C9D17400E49262 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */; };
+		19C288A028C9D17400E49262 /* MealCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */; };
+		19F69D9D28C734EB00AD5705 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 19F69D9C28C734EB00AD5705 /* Realm */; };
+		19F69D9F28C734EB00AD5705 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19F69D9E28C734EB00AD5705 /* RealmSwift */; };
+		19F69DA328C7651F00AD5705 /* RealmMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F69DA228C7651F00AD5705 /* RealmMeal.swift */; };
 		F5027F6F28B4C8DF001CD702 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F6E28B4C8DF001CD702 /* Meals.swift */; };
 		F5027F7128B4CA28001CD702 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F7028B4CA28001CD702 /* K.swift */; };
 		F5111A5928BE41550037F3AD /* MealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5111A5828BE41550037F3AD /* MealService.swift */; };
-		F5111A5B28BE42D60037F3AD /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5111A5A28BE42D60037F3AD /* MealViewModel.swift */; };
+		F5111A5B28BE42D60037F3AD /* ViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5111A5A28BE42D60037F3AD /* ViewControllerViewModel.swift */; };
 		F5111A5E28BE72E00037F3AD /* UIIMageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5111A5D28BE72E00037F3AD /* UIIMageView.swift */; };
 		F5380B9028B37E2400BC59D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380B8F28B37E2400BC59D3 /* AppDelegate.swift */; };
 		F5380B9228B37E2400BC59D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380B9128B37E2400BC59D3 /* SceneDelegate.swift */; };
@@ -40,10 +47,15 @@
 		1966B2CC28C2312900DCFE55 /* MealServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealServiceMock.swift; sourceTree = "<group>"; };
 		1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModelDelegate.swift; sourceTree = "<group>"; };
 		19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = randomMealImage.jpg; path = ../../../Downloads/randomMealImage.jpg; sourceTree = "<group>"; };
+		19C2889728C876A100E49262 /* SavedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCollectionViewController.swift; sourceTree = "<group>"; };
+		19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
+		19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealCollectionViewCell.xib; sourceTree = "<group>"; };
+		19F69DA228C7651F00AD5705 /* RealmMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMeal.swift; sourceTree = "<group>"; };
 		F5027F6E28B4C8DF001CD702 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		F5027F7028B4CA28001CD702 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F5111A5828BE41550037F3AD /* MealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealService.swift; sourceTree = "<group>"; };
-		F5111A5A28BE42D60037F3AD /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
+		F5111A5A28BE42D60037F3AD /* ViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModel.swift; sourceTree = "<group>"; };
 		F5111A5D28BE72E00037F3AD /* UIIMageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIMageView.swift; sourceTree = "<group>"; };
 		F5380B8C28B37E2400BC59D3 /* RandoMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandoMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5380B8F28B37E2400BC59D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F69D9F28C734EB00AD5705 /* RealmSwift in Frameworks */,
+				19F69D9D28C734EB00AD5705 /* Realm in Frameworks */,
 				F5CFDBA228B4DAE300C83AEE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +156,8 @@
 			children = (
 				F5380B9528B37E2400BC59D3 /* Main.storyboard */,
 				F5380B9A28B37E2600BC59D3 /* LaunchScreen.storyboard */,
+				19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */,
+				19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 			children = (
 				F5380B9328B37E2400BC59D3 /* ViewController.swift */,
 				F5380BC628B3B26700BC59D3 /* DetailViewController.swift */,
+				19C2889728C876A100E49262 /* SavedCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				F5027F6E28B4C8DF001CD702 /* Meals.swift */,
+				19F69DA228C7651F00AD5705 /* RealmMeal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,7 +195,8 @@
 		F5380BC328B3B20600BC59D3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F5111A5A28BE42D60037F3AD /* MealViewModel.swift */,
+				F5111A5A28BE42D60037F3AD /* ViewControllerViewModel.swift */,
+				19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -200,6 +219,8 @@
 			name = RandoMeal;
 			packageProductDependencies = (
 				F5CFDBA128B4DAE300C83AEE /* Alamofire */,
+				19F69D9C28C734EB00AD5705 /* Realm */,
+				19F69D9E28C734EB00AD5705 /* RealmSwift */,
 			);
 			productName = RandoMeal;
 			productReference = F5380B8C28B37E2400BC59D3 /* RandoMeal.app */;
@@ -253,6 +274,7 @@
 			mainGroup = F5380B8328B37E2400BC59D3;
 			packageReferences = (
 				F5CFDBA028B4DAE300C83AEE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				19F69D9B28C734EB00AD5705 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = F5380B8D28B37E2400BC59D3 /* Products */;
 			projectDirPath = "";
@@ -270,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5380B9C28B37E2600BC59D3 /* LaunchScreen.storyboard in Resources */,
+				19C288A028C9D17400E49262 /* MealCollectionViewCell.xib in Resources */,
 				F5380B9928B37E2600BC59D3 /* Assets.xcassets in Resources */,
 				F5380B9728B37E2400BC59D3 /* Main.storyboard in Resources */,
 			);
@@ -290,8 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C2889828C876A100E49262 /* SavedCollectionViewController.swift in Sources */,
 				F5027F6F28B4C8DF001CD702 /* Meals.swift in Sources */,
-				F5111A5B28BE42D60037F3AD /* MealViewModel.swift in Sources */,
+				19C2889F28C9D17400E49262 /* MealCollectionViewCell.swift in Sources */,
+				19C2889C28C8C4A000E49262 /* SavedCollectionViewViewModel.swift in Sources */,
+				F5111A5B28BE42D60037F3AD /* ViewControllerViewModel.swift in Sources */,
+				19F69DA328C7651F00AD5705 /* RealmMeal.swift in Sources */,
 				F5111A5E28BE72E00037F3AD /* UIIMageView.swift in Sources */,
 				F5111A5928BE41550037F3AD /* MealService.swift in Sources */,
 				F5380B9428B37E2400BC59D3 /* ViewController.swift in Sources */,
@@ -585,6 +612,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		19F69D9B28C734EB00AD5705 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.7;
+			};
+		};
 		F5CFDBA028B4DAE300C83AEE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -596,6 +631,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		19F69D9C28C734EB00AD5705 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19F69D9B28C734EB00AD5705 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		19F69D9E28C734EB00AD5705 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19F69D9B28C734EB00AD5705 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		F5CFDBA128B4DAE300C83AEE /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F5CFDBA028B4DAE300C83AEE /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -12,9 +12,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var drawButton: UIButton!
     @IBOutlet var detailsButton: UIButton!
+    @IBOutlet var barButton: UIBarButtonItem!
     @IBOutlet var mealLabel: UILabel!
     @IBOutlet var mealImage: UIImageView!
-    private var vm = MealViewModel(mealService: MealService())
+    private var vm = ViewControllerViewModel(mealService: MealService())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +27,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func detailButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: K.sequeIdentifier, sender: self)
+        performSegue(withIdentifier: K.detailSequeIdentifier, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vc = segue.destination as? DetailViewController else { return }
-        vc.meal = vm.meal
-        vc.imageData = vm.mealImageData
+        if segue.identifier! == K.detailSequeIdentifier {
+            guard let vc = segue.destination as? DetailViewController else { return }
+            vc.meal = vc.mealBuilder
+                .copyFrom(vm.meal!)
+                .setImageData(vm.mealImageData)
+                .build()
+        } else {
+            guard let _ = segue.destination as? SavedCollectionViewController else { return }
+            //TODO CONFIGURATION
+        }
+    }
+    
+    @IBAction func barButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: K.savedSequeIdentifier, sender: self)
     }
 }
 
