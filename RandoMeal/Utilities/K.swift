@@ -12,4 +12,5 @@ struct K {
     static let apiMealSearch = "https://www.themealdb.com/"
     static let detailSequeIdentifier = "detail"
     static let savedSequeIdentifier = "saved"
+    static let nibMealCellIdentifier = "MealCell"
 }

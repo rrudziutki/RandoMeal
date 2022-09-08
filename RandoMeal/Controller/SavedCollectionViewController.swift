@@ -7,52 +7,38 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class SavedCollectionViewController: UICollectionViewController {
+    
+    private let vm = SavedCollectionViewViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: K.nibMealCellIdentifier)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
     // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        print(vm.allMeals.count)
+        return vm.allMeals.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let currentMeal = vm.allMeals[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.nibMealCellIdentifier, for: indexPath) as! MealCollectionViewCell
+        cell.imageView.image = UIImage(data: currentMeal.imageData)
+        cell.nameLabel.text = currentMeal.name
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 5
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowRadius = 5.0
+        cell.layer.shadowOpacity = 0.6
+        cell.layer.masksToBounds = false
         return cell
     }
-
     // MARK: UICollectionViewDelegate
 
     /*
@@ -83,5 +69,14 @@ class SavedCollectionViewController: UICollectionViewController {
     
     }
     */
-
+}
+extension SavedCollectionViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let leftAndRightPaddings: CGFloat = 30.0
+        let numberOfItemsPerRow: CGFloat = 2.0
+        let width = (collectionView.frame.width - leftAndRightPaddings) / numberOfItemsPerRow
+        return CGSize(width: width, height: width)
+    }
 }

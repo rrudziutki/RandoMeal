@@ -11,6 +11,9 @@
 		1966B2CF28C2415400DCFE55 /* MealViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */; };
 		19B61CBE28C4AD22007C86B7 /* randomMealImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */; };
 		19C2889828C876A100E49262 /* SavedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889728C876A100E49262 /* SavedCollectionViewController.swift */; };
+		19C2889C28C8C4A000E49262 /* SavedCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */; };
+		19C2889F28C9D17400E49262 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */; };
+		19C288A028C9D17400E49262 /* MealCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */; };
 		19F69D9D28C734EB00AD5705 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 19F69D9C28C734EB00AD5705 /* Realm */; };
 		19F69D9F28C734EB00AD5705 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19F69D9E28C734EB00AD5705 /* RealmSwift */; };
 		19F69DA328C7651F00AD5705 /* RealmMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F69DA228C7651F00AD5705 /* RealmMeal.swift */; };
@@ -45,6 +48,9 @@
 		1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModelDelegate.swift; sourceTree = "<group>"; };
 		19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = randomMealImage.jpg; path = ../../../Downloads/randomMealImage.jpg; sourceTree = "<group>"; };
 		19C2889728C876A100E49262 /* SavedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCollectionViewController.swift; sourceTree = "<group>"; };
+		19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCollectionViewViewModel.swift; sourceTree = "<group>"; };
+		19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
+		19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealCollectionViewCell.xib; sourceTree = "<group>"; };
 		19F69DA228C7651F00AD5705 /* RealmMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMeal.swift; sourceTree = "<group>"; };
 		F5027F6E28B4C8DF001CD702 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		F5027F7028B4CA28001CD702 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
@@ -150,6 +156,8 @@
 			children = (
 				F5380B9528B37E2400BC59D3 /* Main.storyboard */,
 				F5380B9A28B37E2600BC59D3 /* LaunchScreen.storyboard */,
+				19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */,
+				19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				F5111A5A28BE42D60037F3AD /* ViewControllerViewModel.swift */,
+				19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -283,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5380B9C28B37E2600BC59D3 /* LaunchScreen.storyboard in Resources */,
+				19C288A028C9D17400E49262 /* MealCollectionViewCell.xib in Resources */,
 				F5380B9928B37E2600BC59D3 /* Assets.xcassets in Resources */,
 				F5380B9728B37E2400BC59D3 /* Main.storyboard in Resources */,
 			);
@@ -305,6 +315,8 @@
 			files = (
 				19C2889828C876A100E49262 /* SavedCollectionViewController.swift in Sources */,
 				F5027F6F28B4C8DF001CD702 /* Meals.swift in Sources */,
+				19C2889F28C9D17400E49262 /* MealCollectionViewCell.swift in Sources */,
+				19C2889C28C8C4A000E49262 /* SavedCollectionViewViewModel.swift in Sources */,
 				F5111A5B28BE42D60037F3AD /* ViewControllerViewModel.swift in Sources */,
 				19F69DA328C7651F00AD5705 /* RealmMeal.swift in Sources */,
 				F5111A5E28BE72E00037F3AD /* UIIMageView.swift in Sources */,
