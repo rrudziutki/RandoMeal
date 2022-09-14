@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
+    var shouldHideButtons = false
     private let realm = try! Realm()
     let mealBuilder = MealBuilder()
     var meal: RealmMeal!
@@ -49,6 +50,10 @@ private extension DetailViewController {
         configureImage()
         mealLabel.text = meal.name
         descriptionTextView.text = meal.instructions
+        saveButton.isHidden = shouldHideButtons
+        if saveButton.isHidden {
+            deleteButton.isEnabled = true
+        }
     }
     
     func configureImage() {

@@ -6,25 +6,28 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SavedCollectionViewController: UICollectionViewController {
-    
     private let vm = SavedCollectionViewViewModel()
-
+    private let realm = try! Realm()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: K.nibMealCellIdentifier)
+        configure()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        vm.getMeals()
+        collectionView.reloadData()
+    }
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(vm.allMeals.count)
         return vm.allMeals.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let currentMeal = vm.allMeals[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.nibMealCellIdentifier, for: indexPath) as! MealCollectionViewCell
@@ -39,37 +42,64 @@ class SavedCollectionViewController: UICollectionViewController {
         cell.layer.masksToBounds = false
         return cell
     }
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    // MARK: UICollectionViewDelegate
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        vm.selectedMeal = vm.allMeals[indexPath.row]
+        performSegue(withIdentifier: K.savedToDetailSequeIdentifier, sender: self)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? DetailViewController else { return }
+        vc.meal = vm.selectedMeal
+        vc.shouldHideButtons = true
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
+            guard let self = self else { fatalError() }
+            self.vm.selectedMeal = self.vm.allMeals[indexPath.row]
+        
+            let details = UIAction(title: "See details",
+                                image: UIImage(systemName: "magnifyingglass"),
+                                identifier: nil,
+                                discoverabilityTitle: nil,
+                                state: .off) { _ in
+                self.performSegue(withIdentifier: K.savedToDetailSequeIdentifier, sender: self)
+            }
+            
+            let delete = UIAction(title: "Delete",
+                                  image: UIImage(systemName: "trash"),
+                                  identifier: nil,
+                                  discoverabilityTitle: nil,
+                                  attributes: .destructive,
+                                  state: .off) { _ in
+                try! self.realm.write {
+                    self.realm.delete(self.vm.selectedMeal)
+                }
+                collectionView.reloadData()
+            }
+            
+            return UIMenu(title: "",
+                          image: nil,
+                          identifier: nil,
+                          options: UIMenu.Options.displayInline,
+                          children: [details, delete])
+        }
+        return config
+    }
 }
+
+// MARK: - Private Extension
+private extension SavedCollectionViewController {
+    func configure() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: K.nibMealCellIdentifier)
+    }
+}
+
+// MARK: - CollectionViewDelegateFlowLayout
 extension SavedCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize

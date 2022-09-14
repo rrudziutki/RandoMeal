@@ -141,6 +141,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="Bzk-V3-oWj"/>
+                    <connections>
+                        <segue destination="lyy-7W-lts" kind="show" identifier="saveToDetail" id="CF3-Qy-ElT"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoW-qZ-eDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -276,6 +279,9 @@
             <point key="canvasLocation" x="28.037383177570092" y="83.585313174946009"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CF3-Qy-ElT"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <systemColor name="labelColor">
