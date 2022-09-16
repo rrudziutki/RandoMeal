@@ -14,9 +14,11 @@
 		19C2889C28C8C4A000E49262 /* SavedCollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */; };
 		19C2889F28C9D17400E49262 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */; };
 		19C288A028C9D17400E49262 /* MealCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */; };
+		19EAEDB028D48702008AA0FE /* DetailViewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EAEDAF28D48702008AA0FE /* DetailViewViewModelTests.swift */; };
 		19F69D9D28C734EB00AD5705 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 19F69D9C28C734EB00AD5705 /* Realm */; };
 		19F69D9F28C734EB00AD5705 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 19F69D9E28C734EB00AD5705 /* RealmSwift */; };
 		19F69DA328C7651F00AD5705 /* RealmMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F69DA228C7651F00AD5705 /* RealmMeal.swift */; };
+		19FE4E6B28D330F00088CD57 /* DetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FE4E6A28D330F00088CD57 /* DetailViewViewModel.swift */; };
 		F5027F6F28B4C8DF001CD702 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F6E28B4C8DF001CD702 /* Meals.swift */; };
 		F5027F7128B4CA28001CD702 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5027F7028B4CA28001CD702 /* K.swift */; };
 		F5111A5928BE41550037F3AD /* MealService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5111A5828BE41550037F3AD /* MealService.swift */; };
@@ -28,7 +30,7 @@
 		F5380B9728B37E2400BC59D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5380B9528B37E2400BC59D3 /* Main.storyboard */; };
 		F5380B9928B37E2600BC59D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5380B9828B37E2600BC59D3 /* Assets.xcassets */; };
 		F5380B9C28B37E2600BC59D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5380B9A28B37E2600BC59D3 /* LaunchScreen.storyboard */; };
-		F5380BA728B37E2600BC59D3 /* RandoMealTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380BA628B37E2600BC59D3 /* RandoMealTests.swift */; };
+		F5380BA728B37E2600BC59D3 /* ViewControllerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380BA628B37E2600BC59D3 /* ViewControllerViewModelTests.swift */; };
 		F5380BC728B3B26700BC59D3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5380BC628B3B26700BC59D3 /* DetailViewController.swift */; };
 		F5CFDBA228B4DAE300C83AEE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F5CFDBA128B4DAE300C83AEE /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -51,7 +53,9 @@
 		19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCollectionViewViewModel.swift; sourceTree = "<group>"; };
 		19C2889D28C9D17400E49262 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
 		19C2889E28C9D17400E49262 /* MealCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealCollectionViewCell.xib; sourceTree = "<group>"; };
+		19EAEDAF28D48702008AA0FE /* DetailViewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewModelTests.swift; sourceTree = "<group>"; };
 		19F69DA228C7651F00AD5705 /* RealmMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMeal.swift; sourceTree = "<group>"; };
+		19FE4E6A28D330F00088CD57 /* DetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewViewModel.swift; sourceTree = "<group>"; };
 		F5027F6E28B4C8DF001CD702 /* Meals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
 		F5027F7028B4CA28001CD702 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		F5111A5828BE41550037F3AD /* MealService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealService.swift; sourceTree = "<group>"; };
@@ -66,7 +70,7 @@
 		F5380B9B28B37E2600BC59D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5380B9D28B37E2600BC59D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5380BA228B37E2600BC59D3 /* RandoMealTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandoMealTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5380BA628B37E2600BC59D3 /* RandoMealTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandoMealTests.swift; sourceTree = "<group>"; };
+		F5380BA628B37E2600BC59D3 /* ViewControllerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerViewModelTests.swift; sourceTree = "<group>"; };
 		F5380BC628B3B26700BC59D3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,8 +132,8 @@
 		F5380B8E28B37E2400BC59D3 /* RandoMeal */ = {
 			isa = PBXGroup;
 			children = (
-				F5111A5728BE41430037F3AD /* Services */,
 				F5380B9D28B37E2600BC59D3 /* Info.plist */,
+				F5111A5728BE41430037F3AD /* Services */,
 				F5380BC228B3B1FD00BC59D3 /* Model */,
 				F5380BBF28B3B1C600BC59D3 /* View */,
 				F5380BC328B3B20600BC59D3 /* ViewModel */,
@@ -144,9 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				19B61CBD28C4AD22007C86B7 /* randomMealImage.jpg */,
-				F5380BA628B37E2600BC59D3 /* RandoMealTests.swift */,
+				F5380BA628B37E2600BC59D3 /* ViewControllerViewModelTests.swift */,
 				1966B2CC28C2312900DCFE55 /* MealServiceMock.swift */,
 				1966B2CE28C2415400DCFE55 /* MealViewModelDelegate.swift */,
+				19EAEDAF28D48702008AA0FE /* DetailViewViewModelTests.swift */,
 			);
 			path = RandoMealTests;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			children = (
 				F5111A5A28BE42D60037F3AD /* ViewControllerViewModel.swift */,
 				19C2889B28C8C4A000E49262 /* SavedCollectionViewViewModel.swift */,
+				19FE4E6A28D330F00088CD57 /* DetailViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				F5380B9028B37E2400BC59D3 /* AppDelegate.swift in Sources */,
 				F5027F7128B4CA28001CD702 /* K.swift in Sources */,
 				F5380B9228B37E2400BC59D3 /* SceneDelegate.swift in Sources */,
+				19FE4E6B28D330F00088CD57 /* DetailViewViewModel.swift in Sources */,
 				F5380BC728B3B26700BC59D3 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +342,8 @@
 			files = (
 				1966B2CD28C2312900DCFE55 /* MealServiceMock.swift in Sources */,
 				1966B2CF28C2415400DCFE55 /* MealViewModelDelegate.swift in Sources */,
-				F5380BA728B37E2600BC59D3 /* RandoMealTests.swift in Sources */,
+				19EAEDB028D48702008AA0FE /* DetailViewViewModelTests.swift in Sources */,
+				F5380BA728B37E2600BC59D3 /* ViewControllerViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

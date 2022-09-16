@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var barButton: UIBarButtonItem!
     @IBOutlet var mealLabel: UILabel!
     @IBOutlet var mealImage: UIImageView!
-    private var vm = ViewControllerViewModel(mealService: MealService())
+    private var vm = ViewControllerViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +33,11 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == K.detailSequeIdentifier {
             guard let vc = segue.destination as? DetailViewController else { return }
-            vc.meal = vc.mealBuilder
+            vc.meal = vm.mealBuilder
                 .copyFrom(vm.meal!)
                 .setImageData(vm.mealImageData)
                 .build()
+            vm.mealBuilder = MealBuilder()
         } else {
             guard let _ = segue.destination as? SavedCollectionViewController else { return }
             //TODO CONFIGURATION

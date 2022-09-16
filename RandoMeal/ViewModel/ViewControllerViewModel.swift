@@ -19,6 +19,7 @@ class ViewControllerViewModel {
     weak var delegate: MealDelegate!
     var meal: Meal?
     var mealImageData = Data()
+    var mealBuilder = MealBuilder()
     
     init(mealService: MealService = MealService()) {
         self.mealService = mealService

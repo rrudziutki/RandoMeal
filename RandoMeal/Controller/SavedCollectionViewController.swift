@@ -10,7 +10,6 @@ import RealmSwift
 
 class SavedCollectionViewController: UICollectionViewController {
     private let vm = SavedCollectionViewViewModel()
-    private let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,6 @@ class SavedCollectionViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(vm.allMeals.count)
         return vm.allMeals.count
     }
     
@@ -74,9 +72,7 @@ class SavedCollectionViewController: UICollectionViewController {
                                   discoverabilityTitle: nil,
                                   attributes: .destructive,
                                   state: .off) { _ in
-                try! self.realm.write {
-                    self.realm.delete(self.vm.selectedMeal)
-                }
+                self.vm.deleteFromRealm(self.vm.selectedMeal)
                 collectionView.reloadData()
             }
             

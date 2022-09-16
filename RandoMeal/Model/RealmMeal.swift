@@ -15,15 +15,6 @@ class RealmMeal: Object {
     @Persisted var area: String = ""
     @Persisted var instructions: String = ""
     @Persisted var imageData: Data = Data()
-    
-//    init(id: String, name: String, category: String, area: String, instructions: String, imageData: Data) {
-//        self.id = id
-//        self.name = name
-//        self.category = category
-//        self.area = area
-//        self.instructions = instructions
-//        self.imageData = imageData
-//    }
 }
 
 class MealBuilder {

@@ -14,8 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var saveButton: UIButton!
     @IBOutlet var deleteButton: UIButton!
+    private let vm = DetailViewViewModel()
     var shouldHideButtons = false
-    private let realm = try! Realm()
     let mealBuilder = MealBuilder()
     var meal: RealmMeal!
     
@@ -25,23 +25,14 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        do {
-            try realm.write {
-                realm.add(meal)
-                self.saveButton.isEnabled = false
-                self.deleteButton.isEnabled = true
-                //TODO FIX RE-ADDING BUG
-            }
-        } catch let error as NSError {
-            print("An error occurred while saving to realm: \(error)")
-        }
+        vm.saveToRealm(meal)
+        self.saveButton.isEnabled = false
+        self.deleteButton.isEnabled = true
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        try! realm.write {
-            realm.delete(meal)
-            self.deleteButton.isEnabled = false
-        }
+        vm.deleteFromRealm(meal)
+        self.deleteButton.isEnabled = false
     }
 }
 
