@@ -8,7 +8,7 @@
 import XCTest
 @testable import RandoMeal
 
-class RandoMealTests: XCTestCase {
+class ViewControllerViewModelTests: XCTestCase {
     var sut: ViewControllerViewModel!
     var mockService: MealServiceMock!
     var delegate: MockMealViewModelDelegate!
@@ -57,7 +57,4 @@ class RandoMealTests: XCTestCase {
         XCTAssertTrue(delegate.isActivateDetailButtonCalled)
         XCTAssertTrue(delegate.isShowMealInfoCalled)
     }
-    
-    
-
 }

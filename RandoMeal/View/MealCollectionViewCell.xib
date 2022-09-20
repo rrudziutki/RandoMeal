@@ -38,8 +38,6 @@
                             <constraint firstAttribute="bottom" secondItem="Oa5-Yb-E8D" secondAttribute="bottom" id="chw-nG-UUI"/>
                             <constraint firstAttribute="trailing" secondItem="Oa5-Yb-E8D" secondAttribute="trailing" id="d1z-wm-ARR"/>
                             <constraint firstItem="iow-GI-qJU" firstAttribute="top" secondItem="XIr-a3-UAI" secondAttribute="top" id="dax-IF-bC3"/>
-                            <constraint firstAttribute="height" constant="200" id="fPS-z8-ZtG"/>
-                            <constraint firstAttribute="width" constant="150" id="nny-Ho-Afl"/>
                         </constraints>
                     </stackView>
                 </subviews>

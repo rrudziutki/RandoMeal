@@ -1,21 +1,15 @@
 //
-//  SaveCollectionViewViewModel.swift
+//  DetailVCViewModel.swift
 //  RandoMeal
 //
-//  Created by RMakuchowski on 07/09/2022.
+//  Created by RMakuchowski on 15/09/2022.
 //
 
 import Foundation
 import RealmSwift
 
-class SavedCollectionViewViewModel {
+class DetailViewViewModel {
     private let realm: Realm
-    var allMeals: Results<RealmMeal>!
-    var selectedMeal = RealmMeal()
-    
-    func getMeals() {
-        allMeals = realm.objects(RealmMeal.self)
-    }
     
     init(realm: Realm = try! Realm()) {
         self.realm = realm
@@ -37,5 +31,4 @@ class SavedCollectionViewViewModel {
             realm.delete(meal)
         }
     }
-
 }
