@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     @IBOutlet var mealImage: UIImageView!
     @IBOutlet var mealLabel: UILabel!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var saveButton: UIButton!
-    var meal: Meal!
-    var imageData: Data!
+    @IBOutlet var deleteButton: UIButton!
+    private let vm = DetailViewViewModel()
+    var shouldHideButtons = false
+    let mealBuilder = MealBuilder()
+    var meal: RealmMeal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +25,14 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        //TODO save to realm
+        vm.saveToRealm(meal)
+        self.saveButton.isEnabled = false
+        self.deleteButton.isEnabled = true
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        vm.deleteFromRealm(meal)
+        self.deleteButton.isEnabled = false
     }
 }
 
@@ -30,10 +41,14 @@ private extension DetailViewController {
         configureImage()
         mealLabel.text = meal.name
         descriptionTextView.text = meal.instructions
+        saveButton.isHidden = shouldHideButtons
+        if saveButton.isHidden {
+            deleteButton.isEnabled = true
+        }
     }
     
     func configureImage() {
-        mealImage.image = UIImage(data: imageData)
+        mealImage.image = UIImage(data: meal.imageData)
         mealImage.layer.borderWidth = 2
         mealImage.layer.cornerRadius = 5
     }
