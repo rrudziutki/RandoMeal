@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class DetailViewViewModel {
+final class DetailViewViewModel {
     private let realm: Realm
     
     init(realm: Realm = try! Realm()) {

@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class SavedCollectionViewViewModel {
+final class SavedCollectionViewViewModel {
     private let realm: Realm
     var allMeals: Results<RealmMeal>!
     var selectedMeal = RealmMeal()

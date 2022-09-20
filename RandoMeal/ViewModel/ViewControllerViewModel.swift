@@ -14,7 +14,7 @@ protocol MealDelegate: AnyObject {
     func activateDetailButton()
 }
 
-class ViewControllerViewModel {
+final class ViewControllerViewModel {
     private let mealService: MealService
     weak var delegate: MealDelegate!
     var meal: Meal?
